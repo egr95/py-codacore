@@ -1,4 +1,11 @@
+
 import setuptools
+import sys
+
+if sys.version_info < (3, 5):
+    raise EnvironmentError('Sorry, Python < 3.5 is not supported')
+if sys.version_info > (3, 9):
+    raise EnvironmentError('Sorry, Python >= 3.9 is not supported')
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
