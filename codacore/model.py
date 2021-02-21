@@ -128,6 +128,8 @@ class CodaCore:
 
             current_estimate += base_learner.predict(x)
 
+        return self
+
     def predict(self, x, return_logits=True):
         y_pred = np.zeros(x.shape[0])
         for base_learner in self.ensemble:
