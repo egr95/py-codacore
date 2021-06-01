@@ -164,7 +164,7 @@ class CodaCore:
     def get_denominator_parts(self, base_learner_index):
         return list(np.where(self.ensemble[base_learner_index].denominator_parts)[0])
 
-    def get_logratios(self, x):
+    def get_logratio(self, x):
         """
         Takes a set of compositional inputs (of the same shape
         as the original training data) and produces the
@@ -175,7 +175,7 @@ class CodaCore:
         """
         logratios = np.zeros([x.shape[0], len(self.ensemble)])
         for j in range(len(self.ensemble)):
-            logratios[:, j] = self.ensemble[j].get_logratios(x)
+            logratios[:, j] = self.ensemble[j].get_logratio(x)
         return logratios
 
 class CodaCoreBase:
