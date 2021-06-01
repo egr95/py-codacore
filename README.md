@@ -19,7 +19,7 @@ pip install .
 
 2. To fit codacore on some data:
 ```python
-from codacore.models import CodaCore
+from codacore.model import CodaCore
 from codacore.datasets import simulate_hts
 x, y = simulate_hts(1000, 100)
 model = CodaCore(objective='binary_classification', type='balance')
