@@ -320,7 +320,7 @@ class CodaCoreBase:
             i += 1
 
         means = np.mean(scores, axis=1)
-        stds = np.std(scores, axis=1)
+        stds = np.std(scores, axis=1) / np.sqrt(num_folds)
         se_rule = np.max(means) - self.regularization * stds[np.argmax(means)]
         optimal_threshold = candidate_thresholds[means >= se_rule][0]
 
