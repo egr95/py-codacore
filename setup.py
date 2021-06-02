@@ -19,7 +19,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/egr95/py-codacore",
-    python_requires='==3.5, ==3.6, ==3.7, ==3.8',
+    python_requires=">=3.5, <3.9",
     install_requires=[
         'tensorflow>=2.4.0',
         'scikit-learn',
