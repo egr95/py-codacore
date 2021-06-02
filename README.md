@@ -1,8 +1,8 @@
 # py-codacore
 
-A self-contained, up-to-date implementation of [CoDaCoRe](https://www.biorxiv.org/content/10.1101/2021.02.11.430695v1.full.pdf), in python, by the original authors.
+A self-contained implementation of [CoDaCoRe](https://www.biorxiv.org/content/10.1101/2021.02.11.430695v1.full.pdf), in python, by the original authors.
 
-For an equivalent implementation in the R programming language, check [R-codacore](https://github.com/egr95/R-codacore). If you are interested in reproducing the results in the [original paper](https://www.biorxiv.org/content/10.1101/2021.02.11.430695v1), check [this repo](https://github.com/cunningham-lab/codacore).
+Note that a more up-to-date implementation is available in the R programming language, at [R-codacore](https://github.com/egr95/R-codacore). If you are interested in reproducing the results in the [original paper](https://www.biorxiv.org/content/10.1101/2021.02.11.430695v1), check [this repo](https://github.com/cunningham-lab/codacore).
 
 Note this repository is under active development. If you would like to use CoDaCoRe on your dataset, and have any questions regarding the installation, usage, implementation, or model itself, do not hesitate to contact <eg2912@columbia.edu>. 
 Contributions and fixes are also welcome -- please create an issue, submit a pull request, or email me.
