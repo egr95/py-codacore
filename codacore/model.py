@@ -265,7 +265,7 @@ class CodaCoreBase:
                 raise ValueError("Unknown type.")
 
             # Compute learning rate using adaptive strategy
-            optimizer = keras.optimizers.SGD(lr=lr, momentum=self.opt_params['momentum'])
+            optimizer = keras.optimizers.SGD(learning_rate=lr, momentum=self.opt_params['momentum'])
             model = ModelRelaxation(relaxation_layer, current_estimate, intercept_init)
             model.compile(optimizer, loss)
             model.fit(x, y, batch_size=batch_size, epochs=epochs, verbose=False)
