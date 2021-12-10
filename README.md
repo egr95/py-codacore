@@ -34,3 +34,8 @@ Coming soon... If you would like access to an early version, get [in touch](mail
 
 Coming soon... If you would like access to an early version, get [in touch](mailto:eg2912@columbia.edu).
 
+## Acknowledgements
+
+Thanks for your contributions to py-codacore!
+- Marcus Fedarko
+- Yoshiki Vázquez Baeza
