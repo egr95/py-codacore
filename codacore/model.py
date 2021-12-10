@@ -60,10 +60,9 @@ class CodaCore:
             'num_thresholds': 20,
         }
 
-        if cv_params is None:
-            return default_params
-        else:
-            return default_params.update(cv_params)
+        if cv_params is not None:
+            default_params.update(cv_params)
+        return default_params
 
     def set_opt_params(self, opt_params):
         """Overrides the defaults with any user-specified params"""
@@ -76,10 +75,9 @@ class CodaCore:
             'epsilon_b': 1e-2,
         }
 
-        if opt_params is None:
-            return default_params
-        else:
-            return default_params.update(opt_params)
+        if opt_params is not None:
+            default_params.update(opt_params)
+        return default_params
 
     def fit(self, x, y):
         """
