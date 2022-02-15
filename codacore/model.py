@@ -162,7 +162,7 @@ class CodaCore:
     def get_denominator_parts(self, base_learner_index):
         return list(np.where(self.ensemble[base_learner_index].denominator_parts)[0])
 
-    def get_logratio(self, x):
+    def get_logratios(self, x):
         """
         Takes a set of compositional inputs (of the same shape
         as the original training data) and produces the
