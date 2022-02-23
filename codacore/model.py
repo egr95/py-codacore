@@ -245,7 +245,7 @@ class CodaCoreBase:
                 log_reg = sm.GLM(y, np.ones([num_obs, 1]), offset=current_estimate, family=sm.families.Binomial()).fit()
                 intercept_init = log_reg.params[0]
         elif self.objective == 'regression':
-            loss = keras.losses.MSE()
+            loss = keras.losses.MeanSquaredError()
             intercept_init = np.mean(y - current_estimate)
 
         if self.opt_params['batch_size'] is None:
