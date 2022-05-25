@@ -1,5 +1,6 @@
 
 import numpy as np
+import warnings
 from time import time
 import statsmodels.api as sm
 from sklearn.metrics import log_loss
@@ -51,7 +52,7 @@ class CodaCore:
         elif type in ['amalgamations', 'amalgam', 'A', 'SLR']:
             return 'A'
         else:
-            raise ValueError("Invalid 'type' argument given", type)
+            raise ValueError("Invalid 'type' argument given: '%s'" % type)
 
     def set_cv_params(self, cv_params):
         """Overrides the defaults with any user-specified params"""
@@ -288,7 +289,8 @@ class CodaCoreBase:
     def set_threshold_cv(self, x, y, current_estimate):
 
         if np.any(np.abs(self.soft_assignment) > 0.999999):
-            Warning("Large weights encountered in gradient descent; vanishing gradients likely.")
+            warnings.warn("Large weights encountered in gradient descent; "
+                          "vanishing gradients likely.", Warning)
 
         candidate_thresholds = -np.sort(-np.abs(self.soft_assignment))
         num_thresholds = self.cv_params['num_thresholds']
@@ -357,7 +359,7 @@ class CodaCoreBase:
             epsilon = self.opt_params['epsilon_a']
             logratio = np.log(positive_part + epsilon) - np.log(negative_part + epsilon)
         else:
-            raise ValueError("Unknown type given:", self.type)
+            raise ValueError("Unknown type given: '%s'" % self.type)
 
         return logratio
 
