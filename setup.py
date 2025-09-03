@@ -2,11 +2,6 @@
 import setuptools
 import sys
 
-if sys.version_info < (3, 5):
-    raise EnvironmentError('Sorry, Python < 3.5 is not supported')
-if sys.version_info > (3, 9):
-    raise EnvironmentError('Sorry, Python >= 3.9 is not supported')
-
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
@@ -19,7 +14,6 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/egr95/py-codacore",
-    python_requires=">=3.5, <3.9",
     install_requires=[
         'tensorflow>=2.4.0',
         'scikit-learn',
