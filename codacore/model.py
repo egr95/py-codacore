@@ -157,10 +157,10 @@ class CodaCore:
         return
 
     def get_numerator_parts(self, base_learner_index):
-        return list(np.where(self.ensemble[base_learner_index].numerator_parts)[0])
+        return [int(i) for i in np.where(self.ensemble[base_learner_index].numerator_parts)[0]]
 
     def get_denominator_parts(self, base_learner_index):
-        return list(np.where(self.ensemble[base_learner_index].denominator_parts)[0])
+        return [int(i) for i in np.where(self.ensemble[base_learner_index].denominator_parts)[0]]
 
     def get_logratios(self, x):
         """
@@ -270,8 +270,8 @@ class CodaCoreBase:
             return model
 
         # First train for 1 epoch with lr = 1 to find adaptive lr
-        model = gradient_descent(1, 1)
-        lr = self.opt_params['adaptive_lr'] / np.max(np.abs(model.relaxation_layer.get_weights()[0]))
+        model = gradient_descent(1.0, 1)
+        lr = float(self.opt_params['adaptive_lr'] / np.max(np.abs(model.relaxation_layer.get_weights()[0])))
         # Now we can use our adaptive lr to retrain
         model = gradient_descent(lr, self.opt_params['epochs'])
 
